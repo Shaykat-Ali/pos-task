@@ -1,5 +1,10 @@
 @extends('backend.layouts.app')
 @push('css')
+<style>
+    thead{
+      background:#e0e0eb;
+    }
+</style>
 @endpush
 @section('content')
  <!-- Content Wrapper. Contains page content -->
@@ -54,14 +59,30 @@
                             </tr>
                           </thead>
                         <tbody>
+                            @foreach ($purchases as $key => $purchase)
+                            <tr>
+                                <td># {{$key+1}}</td>
+                                <td>{{$purchase->purchase_no}}</td>
+                                <td>{{date('d-m-Y',strtotime($purchase->purchase_date))}}</td>
+                                <td>{{$purchase->supplier->company_name}}</td>
+                                <td>{{$purchase->category->category_name}}</td>
+                                <td>{{$purchase->product->product_name}}</td>
+                                <td>{{$purchase->buying_qty}}
+                                    {{$purchase->product->unit->unit_name}}
+                                </td>
+                                <td>{{$purchase->unit_price}}</td>
+                                <td>{{$purchase->buying_price}}</td>
+                                <td>---</td>
 
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
                 <div class="col-md-12  justify-content-end">
 
                     <div class="col-md-12">
-
+                        {{$purchases->links()}}
                     </div>
 
                 </div>

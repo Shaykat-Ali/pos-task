@@ -18,6 +18,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/products',ProductController::class);
 Route::resource('/purchases',PurchaseController::class);
 Route::resource('/invoices',InvoiceController::class);
+
 Route::resource('/stocks',StockController::class);
 
 Route::get('/get-category',[DefaultController::class,'getCategory'])->name('get-category');

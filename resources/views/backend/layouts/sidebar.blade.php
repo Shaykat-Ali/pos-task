@@ -58,7 +58,7 @@
                 </a>
             </li>
             <li class="nav-item menu-open">
-                <a href="" class="nav-link">
+                <a href="{{ route('invoices.index') }}" class="nav-link">
                     <i class='fa fa-receipt'></i>&nbsp;&nbsp;&nbsp;
                     <p>
                         Invoice
@@ -66,7 +66,7 @@
                 </a>
             </li>
             <li class="nav-item menu-open">
-                <a href="" class="nav-link">
+                <a href="{{ route('stocks.index') }}" class="nav-link">
                     <i class="fa fa-list"></i>&nbsp;&nbsp;
                     <p>
                         Stock

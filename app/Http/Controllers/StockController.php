@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class StockController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        return view('backend.stock.index',[
+            'stock_info' => Product::orderBy('supplier_id','asc')->orderBy('category_id','asc')->get()
+        ]);
     }
 
     /**
